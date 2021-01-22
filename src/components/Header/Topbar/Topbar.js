@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { FaFacebookF, FaInstagram } from 'react-icons/all';
 import { Container } from '../../../styles/GlobalStyle';
 
 const TopbarWrapper = styled.div`
@@ -12,12 +14,25 @@ const InnerContainer = styled(Container)`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  margin-right: 1rem;
+  align-items: center;
+  color: ${({ theme }) => theme.primary};
 `;
 
 const Topbar = () => (
   <TopbarWrapper>
     <InnerContainer>
-      <p>lorem</p>
+      <StyledLink to="https://facebook.com">
+        <FaFacebookF />
+      </StyledLink>
+      <StyledLink to="https://facebook.com">
+        <FaInstagram />
+      </StyledLink>
     </InnerContainer>
   </TopbarWrapper>
 );

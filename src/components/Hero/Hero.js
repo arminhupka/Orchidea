@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Container } from '../../styles/GlobalStyle';
 import nailsImg from '../../images/nails.png';
 
 const SliderWrapper = styled.div`
@@ -12,14 +11,16 @@ const SliderWrapper = styled.div`
 
 const StyledSlider = styled.div`
   position: relative;
-  height: 60rem;
+  height: 40rem;
   width: 100%;
   :active,
   :focus {
     outline: none;
   }
+  @media screen and (min-width: 992px) {
+    height: 60rem;
+  }
 `;
-const InnerContainer = styled.div``;
 
 const StyledImage = styled.img`
   width: 100%;

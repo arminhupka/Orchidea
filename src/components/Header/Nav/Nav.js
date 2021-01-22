@@ -6,7 +6,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 70%;
   background-color: ${({ theme }) => theme.black};
   transform: translateX(${({ visible }) => (visible ? '0' : '-100%')});

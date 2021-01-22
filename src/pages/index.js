@@ -8,16 +8,18 @@ import ServiceCard from '../components/ServiceCard/ServiceCard';
 import Button from '../components/Button/Button';
 import Hero from '../components/Hero/Hero';
 import Helmet from 'react-helmet';
+import { FaCheck } from 'react-icons/fa';
 
 const ContentWrapper = styled.div``;
 
 const InnerWrapper = styled(Container)``;
 
 const StyledImage = styled.img`
+  margin-top: 5rem;
   width: 30rem;
-  padding: 5rem;
   @media screen and (min-width: 992px) {
     width: 40rem !important;
+    margin-top: 0;
   }
 `;
 
@@ -81,7 +83,6 @@ const MemberAvatar = styled.div`
   border-radius: 50%;
   border: 0.5rem solid ${({ theme }) => theme.primary};
   overflow: hidden;
-  background-color: red;
 `;
 const MemberPicture = styled.img`
   position: absolute;
@@ -91,25 +92,36 @@ const MemberPicture = styled.img`
   width: auto;
 `;
 
-const MemberName = styled.h2`
-  margin-bottom: 1rem;
-`;
+const MemberName = styled.h2``;
 
 const MemberDescription = styled.ul`
   flex: 1;
-  width: 60%;
-  margin-bottom: 1rem;
+  //width: 60%;
+  margin: 2rem 0;
   text-align: center;
+
+  li {
+    display: flex;
+    padding: 0.5rem 0;
+    align-items: center;
+  }
 `;
 
 const BookButton = styled(Button)``;
 
+const CheckIcon = styled(FaCheck)`
+  margin-right: 1rem;
+  color: ${({ theme }) => theme.primary};
+`;
+
 const IndexPage = ({
   data: {
-    allFile: { nodes },
+    allImageSharp: { nodes },
   },
 }) => {
-  console.log(nodes[2]);
+  const teamPhotos = nodes.filter(node => node.fluid.src.includes('team_'));
+  console.log(teamPhotos);
+
   return (
     <>
       <Helmet>
@@ -149,6 +161,9 @@ const IndexPage = ({
               <ServiceCard />
               <ServiceCard />
               <ServiceCard />
+              <ServiceCard />
+              <ServiceCard />
+              <ServiceCard />
             </ServicesGrid>
           </InnerWrapper>
         </ServicesSection>
@@ -161,49 +176,67 @@ const IndexPage = ({
             <MembersWrapper>
               <MemberCard>
                 <MemberAvatar>
-                  {/*<MemberPicture*/}
-                  {/*  src={nodes[2].childImageSharp.fluid.src}*/}
-                  {/*  sizes={nodes[2].childImageSharp.fluid.sizes}*/}
-                  {/*  srcSet={nodes[2].childImageSharp.fluid.srcSet}*/}
-                  {/*/>*/}
+                  <MemberPicture
+                    src={teamPhotos[1].fluid.src}
+                    sizes={teamPhotos[1].fluid.sizes}
+                    srcSet={teamPhotos[1].fluid.srcSet}
+                  />
                 </MemberAvatar>
                 <MemberName>Angelika</MemberName>
                 <MemberDescription>
-                  <li>kosmetyczka</li>
-                  <li>zabiegi medycyny estetycznej</li>
-                  <li>modelowanie sylwetki</li>
-                  <li>stylistka paznokci</li>
+                  <li>
+                    <CheckIcon /> kosmetyczka
+                  </li>
+                  <li>
+                    <CheckIcon /> zabiegi medycyny estetycznej
+                  </li>
+                  <li>
+                    <CheckIcon /> modelowanie sylwetki
+                  </li>
+                  <li>
+                    <CheckIcon /> stylistka paznokci
+                  </li>
                 </MemberDescription>
                 <BookButton>Umów termin</BookButton>
               </MemberCard>
               <MemberCard>
                 <MemberAvatar>
-                  {/*<MemberPicture*/}
-                  {/*  src={nodes[3].childImageSharp.fluid.src}*/}
-                  {/*  sizes={nodes[3].childImageSharp.fluid.sizes}*/}
-                  {/*  srcSet={nodes[3].childImageSharp.fluid.srcSet}*/}
-                  {/*/>*/}
+                  <MemberPicture
+                    src={teamPhotos[0].fluid.src}
+                    sizes={teamPhotos[0].fluid.sizes}
+                    srcSet={teamPhotos[0].fluid.srcSet}
+                  />
                 </MemberAvatar>
                 <MemberName>Dominika</MemberName>
                 <MemberDescription>
-                  <li>stylistka paznokci</li>
-                  <li>pedicurzystka</li>
+                  <li>
+                    <CheckIcon /> stylistka paznokci
+                  </li>
+                  <li>
+                    <CheckIcon /> pedicurzystka
+                  </li>
                 </MemberDescription>
                 <BookButton>Umów termin</BookButton>
               </MemberCard>
               <MemberCard>
                 <MemberAvatar>
-                  {/*<MemberPicture*/}
-                  {/*  src={nodes[4].childImageSharp.fluid.src}*/}
-                  {/*  sizes={nodes[4].childImageSharp.fluid.sizes}*/}
-                  {/*  srcSet={nodes[4].childImageSharp.fluid.srcSet}*/}
-                  {/*/>*/}
+                  <MemberPicture
+                    src={teamPhotos[2].fluid.src}
+                    sizes={teamPhotos[2].fluid.sizes}
+                    srcSet={teamPhotos[2].fluid.srcSet}
+                  />
                 </MemberAvatar>
                 <MemberName>Justyna</MemberName>
                 <MemberDescription>
-                  <li>stylistka paznokci</li>
-                  <li>kosmetyczka</li>
-                  <li>pedicurzystka</li>
+                  <li>
+                    <CheckIcon /> stylistka paznokci
+                  </li>
+                  <li>
+                    <CheckIcon /> kosmetyczka
+                  </li>
+                  <li>
+                    <CheckIcon /> pedicurzystka
+                  </li>
                 </MemberDescription>
                 <BookButton>Umów termin</BookButton>
               </MemberCard>
@@ -217,14 +250,12 @@ const IndexPage = ({
 
 export const query = graphql`
   {
-    allFile {
+    allImageSharp {
       nodes {
-        childImageSharp {
-          fluid {
-            src
-            sizes
-            srcSet
-          }
+        fluid(maxHeight: 200, maxWidth: 200, pngQuality: 10) {
+          src
+          srcSet
+          sizes
         }
       }
     }
