@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../styles/GlobalStyle';
-import orchidLogo from '../images/orchid_logo.svg';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import ServiceCard from '../components/ServiceCard/ServiceCard';
 import Button from '../components/Button/Button';
@@ -20,6 +19,7 @@ const StyledImage = styled.img`
   @media screen and (min-width: 992px) {
     width: 40rem !important;
     margin-top: 0;
+    object-fit: contain;
   }
 `;
 
@@ -29,6 +29,9 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
   @media screen and (min-width: 992px) {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -44,6 +47,9 @@ const AboutSection = styled.section`
 `;
 
 const AboutText = styled.div`
+  @media screen and (min-width: 768px) {
+    padding-left: 7rem;
+  }
   @media screen and (min-width: 992px) {
     width: 60%;
   }
@@ -56,7 +62,7 @@ const ServicesSection = styled.section`
 
 const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
 `;
 
 //TEAM
@@ -64,7 +70,7 @@ const TeamSection = styled.section``;
 const MembersWrapper = styled.div`
   @media screen and (min-width: 992px) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   } ;
 `;
 const MemberCard = styled.div`
@@ -119,9 +125,8 @@ const IndexPage = ({
     allImageSharp: { nodes },
   },
 }) => {
+  console.log(nodes);
   const teamPhotos = nodes.filter(node => node.fluid.src.includes('team_'));
-  console.log(teamPhotos);
-
   return (
     <>
       <Helmet>
@@ -135,18 +140,28 @@ const IndexPage = ({
             <AboutText>
               <h1>Studio Urody Orchidea</h1>
               <p>
-                Mea ei paulo debitis affert nominati usu eu, et ius dicta
-                detraxit probatus facete nusquam.
+                To ludzie tworzą miejsce i atmosferę. Ogromne znaczenie ma dla
+                nas zespół. Przykładamy bardzo dużą wagę, by osoby pracujące w
+                Naszym Studio były kompetentne, zaangażowane w swoją pracę,
+                miały odpowiednie podejście do klienta oraz ciągłą chęć rozwoju
+                i podnoszenia swoich umiejętności.
               </p>
               <p>
-                Mea ei paulo debitis affert nominati usu eu, et ius dicta
-                detraxit probatus facete nusquam deleniti ex nec te sit tale
-                atqui abhorreant luptatum conclusionemque cum quo et wisi ignota
-                semper.
+                Ważne jest dla Nas, by każda klientka czuła się u Nas dobrze,
+                była zadowolona z wykonanej usługi i z przyjemnością do Nas
+                wracała. Dlatego też, wszystkie usługi wykonujemy z ogromną
+                starannością i zaangażowaniem, by sprostać nawet najwyższym
+                oczekiwaniom. Nasza praca to Nasza pasja, dzięki temu wykonujemy
+                ją z przyjemnością i uśmiechem co przekłada się na miłą i
+                przyjazną atmosferę w Naszym Studio.
               </p>
               <Button>Umów wizytę</Button>
             </AboutText>
-            <StyledImage src={orchidLogo} alt="" />
+            <StyledImage
+              src={nodes[3].fluid.src}
+              sizes={nodes[3].fluid.sizes}
+              srcSet={nodes[3].fluid.srcSet}
+            />
           </AboutSection>
         </InnerWrapper>
         <ServicesSection>
@@ -156,14 +171,11 @@ const IndexPage = ({
               subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus porro repudiandae tempora?"
             />
             <ServicesGrid>
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
+              <ServiceCard title="Dłonie" />
+              <ServiceCard title="Henna i regulacja" />
+              <ServiceCard title="Zabiegi na stopy" />
+              <ServiceCard title="Elektrostymulacja" />
+              <ServiceCard title="Dermomasaż" />
             </ServicesGrid>
           </InnerWrapper>
         </ServicesSection>
@@ -252,7 +264,7 @@ export const query = graphql`
   {
     allImageSharp {
       nodes {
-        fluid(maxHeight: 200, maxWidth: 200, pngQuality: 10) {
+        fluid {
           src
           srcSet
           sizes

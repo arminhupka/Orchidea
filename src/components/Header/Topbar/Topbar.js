@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import { FaFacebookF, FaInstagram } from 'react-icons/all';
 import { Container } from '../../../styles/GlobalStyle';
 
@@ -17,7 +16,7 @@ const InnerContainer = styled(Container)`
   justify-content: flex-start;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   display: flex;
   margin-right: 1rem;
   align-items: center;

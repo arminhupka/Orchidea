@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   padding: 1rem 2rem;
   color: #fff;
-  background-color: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.primary};
   border: none;
   border-radius: 0.5rem;
   transition: background-color 0.6s;

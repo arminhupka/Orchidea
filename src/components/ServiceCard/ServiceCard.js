@@ -13,10 +13,10 @@ const CardWrapper = styled.div`
 
 const StyledImage = styled.img``;
 
-const ServiceCard = () => (
+const ServiceCard = ({ title }) => (
   <CardWrapper>
     <StyledImage src={cardImg} />
-    <h2>Service</h2>
+    <h2>{title}</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
   </CardWrapper>
 );
