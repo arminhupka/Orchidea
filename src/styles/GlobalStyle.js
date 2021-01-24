@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   h2 {
-    font-size: 3.6rem;
+    font-size: 2.9rem;
   }
   
   ul {
@@ -49,6 +49,8 @@ const GlobalStyle = createGlobalStyle`
   
   a {
     text-decoration: none;
+    font-weight: 600;
+    color: ${({ theme }) => theme.primary};
   }
   
   section {

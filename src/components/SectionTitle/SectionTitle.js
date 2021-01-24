@@ -7,7 +7,19 @@ const HeadingWrapper = styled.div`
   text-align: center;
 
   h1 {
+    position: relative;
+    display: inline-block;
     margin-bottom: 2rem;
+    ::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+      height: 0.5rem;
+      width: 100%;
+      background: ${({ theme }) => theme.primary};
+    }
   }
 `;
 

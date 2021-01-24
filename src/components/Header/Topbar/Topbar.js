@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaFacebookF, FaInstagram } from 'react-icons/all';
+import { FaFacebookF } from 'react-icons/all';
 import { Container } from '../../../styles/GlobalStyle';
 
 const TopbarWrapper = styled.div`
@@ -26,11 +26,8 @@ const StyledLink = styled.a`
 const Topbar = () => (
   <TopbarWrapper>
     <InnerContainer>
-      <StyledLink to="https://facebook.com">
+      <StyledLink href="https://www.facebook.com/suOrchidea/">
         <FaFacebookF />
-      </StyledLink>
-      <StyledLink to="https://facebook.com">
-        <FaInstagram />
       </StyledLink>
     </InnerContainer>
   </TopbarWrapper>
