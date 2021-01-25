@@ -21,6 +21,11 @@ const HeadingWrapper = styled.div`
       background: ${({ theme }) => theme.primary};
     }
   }
+  
+  p {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
 `;
 
 const SectionTitle = ({ title, subtitle }) => (

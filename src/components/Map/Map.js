@@ -9,9 +9,9 @@ const MapWrapper = styled(MapContainer)`
 `
 
 const Map = () => {
-    const position = [51.505, -0.09]
+    const position = [50.273, 18.862]
     return (
-        <MapWrapper center={position} zoom={13} scrollWheelZoom={true}>
+        <MapWrapper center={position} zoom={17} scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
