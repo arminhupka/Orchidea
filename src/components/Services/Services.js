@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../../styles/GlobalStyle';
 import SectionTitle from '../SectionTitle/SectionTitle';
@@ -29,24 +30,41 @@ const StyledImage = styled.img`
   width: 33rem;
 `;
 
-const Services = () => (
-  <StyledSection>
-    <InnerContainer>
-      <StyledImage src={orchidImage} />
-      <SectionTitle
-        title="Usługi"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      />
-      <StyledGrid>
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
-      </StyledGrid>
-    </InnerContainer>
-  </StyledSection>
-);
+const Services = () => {
+  const query = graphql`
+    {
+      allDatoCmsService {
+        nodes {
+          title
+          description
+        }
+      }
+    }
+  `;
+
+  const {
+    allDatoCmsService: { nodes: services },
+  } = useStaticQuery(query);
+
+  return (
+    <StyledSection>
+      <InnerContainer>
+        <StyledImage src={orchidImage} />
+        <SectionTitle
+          title="Usługi"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        />
+        <StyledGrid>
+          {services.map(service => (
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+            />
+          ))}
+        </StyledGrid>
+      </InnerContainer>
+    </StyledSection>
+  );
+};
 
 export default Services;

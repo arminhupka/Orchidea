@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   padding: 1rem 2rem;
@@ -10,6 +10,12 @@ const Button = styled.button`
   :hover {
     background-color: ${({ theme }) => theme.primaryDark};
   }
+
+  ${({ black }) =>
+    black &&
+    css`
+      background-color: ${({ theme }) => theme.darkGray};
+    `}
 `;
 
 export default Button;

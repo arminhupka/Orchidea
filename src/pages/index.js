@@ -11,19 +11,21 @@ const ContentWrapper = styled.div`
   overflow: hidden;
 `;
 
-const IndexPage = () => (
-  <>
-    <Helmet>
-      <title>Orchidea</title>
-      <meta name="description" content="Helmet application" />
-    </Helmet>
-    <ContentWrapper>
-      <Hero />
-      <About />
-      <Services />
-      <Team />
-    </ContentWrapper>
-  </>
-);
+const IndexPage = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Orchidea</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
+      <ContentWrapper>
+        <Hero />
+        <About />
+        <Services />
+        <Team />
+      </ContentWrapper>
+    </>
+  );
+};
 
 export default IndexPage;

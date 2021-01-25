@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { Container } from '../../styles/GlobalStyle';
@@ -34,21 +35,42 @@ const StyledImage = styled.img`
   }
 `;
 
-const Team = () => (
-  <StyledSection>
-    <InnerSection>
-      <StyledImage src={orchideImage} />
-      <SectionTitle
-        title="Nasz zespół"
-        subtitle="Mea ei paulo debitis affert nominati usu eu, et ius dicta detraxit probatus facete nusquam deleniti ex nec te sit tale."
-      />
-      <StyledGrid>
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-      </StyledGrid>
-    </InnerSection>
-  </StyledSection>
-);
+const query = graphql`
+  {
+    allDatoCmsTeamMember {
+      nodes {
+        name
+        services
+        picture {
+          url
+        }
+      }
+    }
+  }
+`;
+
+const Team = () => {
+  const { allDatoCmsTeamMember: members } = useStaticQuery(query);
+  return (
+    <StyledSection>
+      <InnerSection>
+        <StyledImage src={orchideImage} />
+        <SectionTitle
+          title="Nasz zespół"
+          subtitle="Mea ei paulo debitis affert nominati usu eu, et ius dicta detraxit probatus facete nusquam deleniti ex nec te sit tale."
+        />
+        <StyledGrid>
+          {members.nodes.map(member => (
+            <TeamCard
+              name={member.name}
+              imgUrl={member.picture.url}
+              services={member.services}
+            />
+          ))}
+        </StyledGrid>
+      </InnerSection>
+    </StyledSection>
+  );
+};
 
 export default Team;

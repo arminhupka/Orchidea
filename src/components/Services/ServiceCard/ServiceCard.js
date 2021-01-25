@@ -36,11 +36,11 @@ const StyledImage = styled.img`
   width: 100%;
 `;
 
-const ServiceCard = () => (
+const ServiceCard = ({ title, description }) => (
   <CardWrapper>
     <StyledImage src={ServiceIcon} alt="" />
-    <h2>Service Card</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
   </CardWrapper>
 );
 

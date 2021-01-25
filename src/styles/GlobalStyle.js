@@ -53,6 +53,12 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.primary};
   }
   
+  input {
+    font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+  }
+  
   section {
     padding: 5rem 0;
   }

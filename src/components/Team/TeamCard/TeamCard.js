@@ -30,15 +30,17 @@ const StyledList = styled.ul`
 `;
 const StyledItem = styled.li``;
 
-const TeamCard = () => (
+const TeamCard = ({ name, imgUrl, services }) => (
   <CardWrapper>
-    <StyledImage src="https://cdn.versum.net/avatars/4279946/medium/avatar-1601398232-16348701ccb605217628" />
-    <StyledName>Name</StyledName>
+    <StyledImage src={imgUrl} />
+    <StyledName>{name}</StyledName>
     <StyledList>
-      <StyledItem>service name</StyledItem>
-      <StyledItem>service name</StyledItem>
-      <StyledItem>service name</StyledItem>
-      <StyledItem>service name</StyledItem>
+      {services
+        ? services
+            .split('\n')
+            .map(service => service.substring(2))
+            .map(el => <StyledItem>{el}</StyledItem>)
+        : null}
     </StyledList>
     <Button>Zapisz się</Button>
   </CardWrapper>

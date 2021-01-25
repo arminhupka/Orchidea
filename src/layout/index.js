@@ -6,12 +6,14 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
 const MainLayout = ({ children }) => (
-  <ThemeProvider theme={Theme}>
-    <GlobalStyle />
-    <Header />
-    {children}
-    <Footer />
-  </ThemeProvider>
+  <>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      <Header />
+      {children}
+      <Footer />
+    </ThemeProvider>
+  </>
 );
 
 export default MainLayout;

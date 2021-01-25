@@ -42,7 +42,20 @@ const StyledButton = styled(Button)`
 `;
 
 const Cta = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: 2rem;
+
+  ${StyledButton} {
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    ${StyledButton} {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const StyledLink = styled(Link)``;
@@ -70,7 +83,7 @@ const About = () => (
         </StyledParagraph>
         <Cta>
           <StyledButton>Zarezerwuj wizytę</StyledButton>
-          <StyledLink href="">Skontaktuj się z nami</StyledLink>
+          <StyledLink to="/kontakt">Skontaktuj się z nami</StyledLink>
         </Cta>
       </AboutText>
     </InnerContainer>
