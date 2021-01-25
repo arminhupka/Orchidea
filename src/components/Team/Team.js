@@ -61,7 +61,7 @@ const Team = () => {
         />
         <StyledGrid>
           {members.nodes.map(member => (
-            <TeamCard
+            <TeamCard key={member.name}
               name={member.name}
               imgUrl={member.picture.url}
               services={member.services}

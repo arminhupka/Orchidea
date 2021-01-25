@@ -39,7 +39,7 @@ const TeamCard = ({ name, imgUrl, services }) => (
         ? services
             .split('\n')
             .map(service => service.substring(2))
-            .map(el => <StyledItem>{el}</StyledItem>)
+            .map(el => <StyledItem key={el}>{el}</StyledItem>)
         : null}
     </StyledList>
     <Button>Zapisz się</Button>

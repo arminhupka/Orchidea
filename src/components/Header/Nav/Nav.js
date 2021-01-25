@@ -64,25 +64,25 @@ const StyledLink = styled(Link)`
 `;
 
 const Nav = ({ visible }) => (
-  <StyledNav visible={visible}>
-    <StyledList>
-      <StyledItem>
-        <StyledLink to="/">Strona Główna</StyledLink>
-      </StyledItem>
-      <StyledItem>
-        <StyledLink to="/o-nas">O Nas</StyledLink>
-      </StyledItem>
-      <StyledItem>
-        <StyledLink to="/uslugi">Usługi</StyledLink>
-      </StyledItem>
-      <StyledItem>
-        <StyledLink to="/cennik">Cennik</StyledLink>
-      </StyledItem>
-      <StyledItem>
-        <StyledLink to="/kontakt">Kontakt</StyledLink>
-      </StyledItem>
-    </StyledList>
-  </StyledNav>
-);
+      <StyledNav visible={visible}>
+        <StyledList >
+          <StyledItem>
+            <StyledLink to="/">Strona Główna</StyledLink>
+          </StyledItem>
+          <StyledItem>
+            <StyledLink to="/o-nas">O Nas</StyledLink>
+          </StyledItem>
+          <StyledItem>
+            <StyledLink to="/uslugi">Usługi</StyledLink>
+          </StyledItem>
+          <StyledItem>
+            <StyledLink to="/cennik">Cennik</StyledLink>
+          </StyledItem>
+          <StyledItem>
+            <StyledLink to="/kontakt">Kontakt</StyledLink>
+          </StyledItem>
+        </StyledList>
+      </StyledNav>
+  )
 
 export default Nav;
