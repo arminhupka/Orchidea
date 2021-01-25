@@ -11,7 +11,9 @@ const StyledSection = styled.section`
   background-color: ${({ theme }) => theme.primaryLight};
 `;
 
-const InnerContainer = styled(Container)``;
+const InnerContainer = styled(Container)`
+  position: relative;
+`;
 
 const StyledGrid = styled.div`
   width: 100%;
@@ -28,6 +30,10 @@ const StyledImage = styled.img`
   right: -20rem;
   height: 53rem;
   width: 33rem;
+  z-index: 0;
+  @media screen and (min-width: 992px) {
+    right: -20rem;
+  }
 `;
 
 const Services = () => {
