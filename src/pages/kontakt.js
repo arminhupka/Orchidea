@@ -106,95 +106,95 @@ const CardText = styled.div``;
 
 const Contact = () => {
   return (
-    <StyledSection>
-      <StyledContainer>
-        <SectionTitle title="Kontakt" />
-        <ContactDetails>
-          <ContactInfo>
-            <ContactInfoCard>
-              <FiHome />
-              <CardText>
-                <h2>Adres</h2>
-                <p>ul. Targowa 1</p>
-                <p>Ruda Śląska (Wirek)</p>
-              </CardText>
-            </ContactInfoCard>
-            <ContactInfoCard>
-              <FiPhone />
-              <CardText>
-                <h2>Telefon</h2>
-                <a href="tel:506036299">506-036-299</a>
-              </CardText>
-            </ContactInfoCard>
-            <ContactInfoCard>
-              <FiPhone />
-              <CardText>
-                <h2>Telefon</h2>
-                <a href="tel:506036299">506-036-299</a>
-              </CardText>
-            </ContactInfoCard>
-            <ContactInfoCard>
-              <FiPhone />
-              <CardText>
-                <h2>Telefon</h2>
-                <a href="tel:506036299">506-036-299</a>
-              </CardText>
-            </ContactInfoCard>
-          </ContactInfo>
-          <FormContainer>
-            <StyledForm>
-              <StyledInput placeholder="Imię i nazwisko" />
-              <StyledInput placeholder="Imię i nazwisko" />
-              <StyledInput placeholder="Imię i nazwisko" />
-              <StyledInput placeholder="Imię i nazwisko" />
-              <StyledButton black>Wyślij wiadomość</StyledButton>
-            </StyledForm>
-          </FormContainer>
-        </ContactDetails>
-        <ContactDetails>
-          <OpeningTime>
-            <h2>Godziny otwarcia</h2>
-            <StyledList>
-              <StyledItem>
-                <DayText>Poniedziałek</DayText>
-                <hr />
-                <TimeText>11:00 - 20:00</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Wtorek</DayText>
-                <hr />
-                <TimeText>08:00 - 16:00</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Środa</DayText>
-                <hr />
-                <TimeText>08:00 - 17:00</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Czwartek</DayText>
-                <hr />
-                <TimeText>11:00 - 20:00</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Piątek</DayText>
-                <hr />
-                <TimeText>08:00 - 14:00</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Sobota</DayText>
-                <hr />
-                <TimeText>Nieczynne</TimeText>
-              </StyledItem>
-              <StyledItem>
-                <DayText>Niedziela</DayText>
-                <hr />
-                <TimeText>Nieczynne</TimeText>
-              </StyledItem>
-            </StyledList>
-          </OpeningTime>
-        </ContactDetails>
-      </StyledContainer>
-    </StyledSection>
+      <StyledSection>
+        <StyledContainer>
+          <SectionTitle title="Kontakt" />
+          <ContactDetails>
+            <ContactInfo>
+              <ContactInfoCard>
+                <FiHome />
+                <CardText>
+                  <h2>Adres</h2>
+                  <p>ul. Targowa 1</p>
+                  <p>Ruda Śląska (Wirek)</p>
+                </CardText>
+              </ContactInfoCard>
+              <ContactInfoCard>
+                <FiPhone />
+                <CardText>
+                  <h2>Telefon</h2>
+                  <a href="tel:506036299">506-036-299</a>
+                </CardText>
+              </ContactInfoCard>
+              <ContactInfoCard>
+                <FiPhone />
+                <CardText>
+                  <h2>Telefon</h2>
+                  <a href="tel:506036299">506-036-299</a>
+                </CardText>
+              </ContactInfoCard>
+              <ContactInfoCard>
+                <FiPhone />
+                <CardText>
+                  <h2>Telefon</h2>
+                  <a href="tel:506036299">506-036-299</a>
+                </CardText>
+              </ContactInfoCard>
+            </ContactInfo>
+            <FormContainer>
+              <StyledForm>
+                <StyledInput placeholder="Imię i nazwisko" />
+                <StyledInput placeholder="Imię i nazwisko" />
+                <StyledInput placeholder="Imię i nazwisko" />
+                <StyledInput placeholder="Imię i nazwisko" />
+                <StyledButton black>Wyślij wiadomość</StyledButton>
+              </StyledForm>
+            </FormContainer>
+          </ContactDetails>
+          <ContactDetails>
+            <OpeningTime>
+              <h2>Godziny otwarcia</h2>
+              <StyledList>
+                <StyledItem>
+                  <DayText>Poniedziałek</DayText>
+                  <hr />
+                  <TimeText>11:00 - 20:00</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Wtorek</DayText>
+                  <hr />
+                  <TimeText>08:00 - 16:00</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Środa</DayText>
+                  <hr />
+                  <TimeText>08:00 - 17:00</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Czwartek</DayText>
+                  <hr />
+                  <TimeText>11:00 - 20:00</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Piątek</DayText>
+                  <hr />
+                  <TimeText>08:00 - 14:00</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Sobota</DayText>
+                  <hr />
+                  <TimeText>Nieczynne</TimeText>
+                </StyledItem>
+                <StyledItem>
+                  <DayText>Niedziela</DayText>
+                  <hr />
+                  <TimeText>Nieczynne</TimeText>
+                </StyledItem>
+              </StyledList>
+            </OpeningTime>
+          </ContactDetails>
+        </StyledContainer>
+      </StyledSection>
   );
 };
 
