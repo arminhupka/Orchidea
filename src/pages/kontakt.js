@@ -57,19 +57,19 @@ const Kontakt = () => (
                           subtitle="Skontakuj się z nami a chętnie odpowiemy na wszystkie Twoje pytania dotyczące naszej firmy i usług."/>
             <ContactDetails>
                 <ContactCard>
-                    <h2>Adres</h2>
+                    <h2>Odwiedź nas</h2>
                     <StyledLine/>
                     <p>ul. Targowa 1, Ruda Śląska</p>
                 </ContactCard>
                 <ContactCard>
-                    <h2>Telefon</h2>
+                    <h2>Zadzwoń do nas</h2>
                     <StyledLine/>
-                    <p>ul. Targowa 1, Ruda Śląska</p>
+                    <a href="tel:506036299">506 036 299</a>
                 </ContactCard>
                 <ContactCard>
-                    <h2>Email</h2>
+                    <h2>Napisz do nas</h2>
                     <StyledLine/>
-                    <p>ul. Targowa 1, Ruda Śląska</p>
+                    <a href="mailto:suorchidea@interia.pl">suorchidea@interia.pl</a>
                 </ContactCard>
             </ContactDetails>
             <BottomInfo>
