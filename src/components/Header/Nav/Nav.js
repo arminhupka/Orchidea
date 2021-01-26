@@ -11,7 +11,7 @@ const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.black};
   transform: translateX(${({ visible }) => (visible ? '0' : '-100%')});
   transition: transform 0.6s ease-in-out;
-  z-index: 1000;
+  z-index: 10000;
   @media screen and (min-width: 992px) {
     position: initial;
     height: 100%;

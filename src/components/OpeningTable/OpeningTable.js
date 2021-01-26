@@ -13,7 +13,7 @@ const StyledList = styled.ul`
 `
 
 const Title = styled.h2`
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 `
 
 const OpeningTable = () => (

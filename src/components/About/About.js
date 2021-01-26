@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 
-import { Container } from '../../styles/GlobalStyle';
+import {Container} from '../../styles/GlobalStyle';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import Button from '../Button/Button';
 
@@ -49,6 +49,7 @@ const Cta = styled.div`
   ${StyledButton} {
     margin-bottom: 1rem;
   }
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
@@ -61,33 +62,35 @@ const Cta = styled.div`
 const StyledLink = styled(Link)``;
 
 const About = () => (
-  <StyledSection>
-    <InnerContainer>
-      <StyledImage src={orchideaLogo} />
-      <AboutText>
-        <SectionTitle title="Studio Urody Orchidea" />
-        <StyledParagraph>
-          To ludzie tworzą miejsce i atmosferę. Ogromne znaczenie ma dla nas
-          zespół. Przykładamy bardzo dużą wagę, by osoby pracujące w Naszym
-          Studio były kompetentne, zaangażowane w swoją pracę, miały odpowiednie
-          podejście do klienta oraz ciągłą chęć rozwoju i podnoszenia swoich
-          umiejętności.
-        </StyledParagraph>
-        <StyledParagraph>
-          Ważne jest dla Nas, by każda klientka czuła się u Nas dobrze, była
-          zadowolona z wykonanej usługi i z przyjemnością do Nas wracała.
-          Dlatego też, wszystkie usługi wykonujemy z ogromną starannością i
-          zaangażowaniem, by sprostać nawet najwyższym oczekiwaniom. Nasza praca
-          to Nasza pasja, dzięki temu wykonujemy ją z przyjemnością i uśmiechem
-          co przekłada się na miłą i przyjazną atmosferę w Naszym Studio.
-        </StyledParagraph>
-        <Cta>
-          <StyledButton>Zarezerwuj wizytę</StyledButton>
-          <StyledLink to="/kontakt">Skontaktuj się z nami</StyledLink>
-        </Cta>
-      </AboutText>
-    </InnerContainer>
-  </StyledSection>
+    <StyledSection>
+        <InnerContainer>
+            <StyledImage src={orchideaLogo}/>
+            <AboutText>
+                <SectionTitle title="Studio Urody Orchidea"/>
+                <StyledParagraph>
+                    To ludzie tworzą miejsce i atmosferę. Ogromne znaczenie ma dla nas
+                    zespół. Przykładamy bardzo dużą wagę, by osoby pracujące w Naszym
+                    Studio były kompetentne, zaangażowane w swoją pracę, miały odpowiednie
+                    podejście do klienta oraz ciągłą chęć rozwoju i podnoszenia swoich
+                    umiejętności.
+                </StyledParagraph>
+                <StyledParagraph>
+                    Ważne jest dla Nas, by każda klientka czuła się u Nas dobrze, była
+                    zadowolona z wykonanej usługi i z przyjemnością do Nas wracała.
+                    Dlatego też, wszystkie usługi wykonujemy z ogromną starannością i
+                    zaangażowaniem, by sprostać nawet najwyższym oczekiwaniom. Nasza praca
+                    to Nasza pasja, dzięki temu wykonujemy ją z przyjemnością i uśmiechem
+                    co przekłada się na miłą i przyjazną atmosferę w Naszym Studio.
+                </StyledParagraph>
+                <Cta>
+                    <a href="https://www.moment.pl/studio-urody-orchidea-ruda-slaska#oferta">
+                        <StyledButton>Zarezerwuj wizytę</StyledButton>
+                    </a>
+                    <StyledLink to="/kontakt">Skontaktuj się z nami</StyledLink>
+                </Cta>
+            </AboutText>
+        </InnerContainer>
+    </StyledSection>
 );
 
 export default About;

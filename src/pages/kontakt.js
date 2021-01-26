@@ -54,20 +54,20 @@ const Kontakt = () => (
     <StyledSection>
         <StyledContainer>
             <SectionTitle title="Kontakt"
-                          subtitle="We will answer any questions you may have about our online sales, rights or partnership service right here."/>
+                          subtitle="Skontakuj się z nami a chętnie odpowiemy na wszystkie Twoje pytania dotyczące naszej firmy i usług."/>
             <ContactDetails>
                 <ContactCard>
-                    <h3>Adres</h3>
+                    <h2>Adres</h2>
                     <StyledLine/>
                     <p>ul. Targowa 1, Ruda Śląska</p>
                 </ContactCard>
                 <ContactCard>
-                    <h3>Telefon</h3>
+                    <h2>Telefon</h2>
                     <StyledLine/>
                     <p>ul. Targowa 1, Ruda Śląska</p>
                 </ContactCard>
                 <ContactCard>
-                    <h3>Email</h3>
+                    <h2>Email</h2>
                     <StyledLine/>
                     <p>ul. Targowa 1, Ruda Śląska</p>
                 </ContactCard>

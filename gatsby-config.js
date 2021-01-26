@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Orchidea`,
@@ -16,7 +17,7 @@ module.exports = {
       options: {
         // You can find your read-only API token under the Settings > API tokens
         // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-        apiToken: `31a10be4fa76d9444542189b989af1`,
+        apiToken: `${process.env.DATO_TOKEN}`,
 
         // The project environment to read from. Defaults to the primary environment:
         environment: `main`,

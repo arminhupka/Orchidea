@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ServiceIcon from '../../../images/serviceIcon.svg';
+import ServiceIcon from '../../images/serviceIcon.svg';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -28,6 +28,7 @@ const CardWrapper = styled.div`
   h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
+    font-size: 1.4em;
   }
 `;
 

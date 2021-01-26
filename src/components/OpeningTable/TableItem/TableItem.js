@@ -10,9 +10,11 @@ const StyledItem = styled.li`
 `
 const StyledDay = styled.p`
   padding-right: 1rem;
+  font-weight: 500;
 `
 const StyledHour = styled.p`
   padding-left: 1rem;
+  font-weight: 700;
 `
 const StyledLine = styled.hr`
   flex: 1;
