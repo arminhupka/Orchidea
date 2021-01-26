@@ -7,6 +7,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+      }
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve('./src/layout'),
@@ -17,7 +23,7 @@ module.exports = {
       options: {
         // You can find your read-only API token under the Settings > API tokens
         // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-        apiToken: process.env.DATO_TOKEN,
+        apiToken: `31a10be4fa76d9444542189b989af1`,
 
         // The project environment to read from. Defaults to the primary environment:
         environment: `main`,
