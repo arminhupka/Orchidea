@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import {Container} from "../../styles/GlobalStyle";
 
 const SliderWrapper = styled.div`
-  overflow: hidden;
+  //overflow: hidden;
 `;
 
 const StyledSlide = styled.div`
@@ -84,11 +84,13 @@ const Hero = () => {
     console.log(sliders)
 
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
     };
 
     return (
