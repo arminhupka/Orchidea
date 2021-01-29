@@ -60,7 +60,7 @@ const Services = () => {
                 <StyledImage src={orchidImage}/>
                 <SectionTitle
                     title="Usługi"
-                    subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+                    subtitle="Sprawdź co możemy dla Ciebie zrobić"
                 />
                 <StyledGrid>
                     {services.map(service => (
@@ -68,6 +68,7 @@ const Services = () => {
                             key={service.title}
                             title={service.title}
                             description={service.description}
+
                         />
                     ))}
                 </StyledGrid>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import {graphql, useStaticQuery} from 'gatsby';
 import styled from 'styled-components';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { Container } from '../../styles/GlobalStyle';
+import {Container} from '../../styles/GlobalStyle';
 import TeamCard from './TeamCard/TeamCard';
 import orchideImage from '../../images/orchid_2.svg';
 
@@ -16,9 +16,11 @@ const StyledGrid = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+
   & > * {
     margin-bottom: 6rem;
   }
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -36,41 +38,43 @@ const StyledImage = styled.img`
 `;
 
 const query = graphql`
-  {
-    allDatoCmsTeamMember {
-      nodes {
-        name
-        services
-        picture {
-          url
+    {
+        allDatoCmsTeamMember {
+            nodes {
+                name
+                services
+                bookLink
+                picture {
+                    url
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 const Team = () => {
-  const { allDatoCmsTeamMember: members } = useStaticQuery(query);
-  return (
-    <StyledSection>
-      <InnerSection>
-        <StyledImage src={orchideImage} />
-        <SectionTitle
-          title="Nasz zespół"
-          subtitle="Mea ei paulo debitis affert nominati usu eu, et ius dicta detraxit probatus facete nusquam deleniti ex nec te sit tale."
-        />
-        <StyledGrid>
-          {members.nodes.map(member => (
-            <TeamCard key={member.name}
-              name={member.name}
-              imgUrl={member.picture.url}
-              services={member.services}
-            />
-          ))}
-        </StyledGrid>
-      </InnerSection>
-    </StyledSection>
-  );
+    const {allDatoCmsTeamMember: members} = useStaticQuery(query);
+    return (
+        <StyledSection>
+            <InnerSection>
+                <StyledImage src={orchideImage}/>
+                <SectionTitle
+                    title="Nasz zespół"
+                    subtitle="Poznaj nasz zespół i zobacz co mogą dla Ciebie zrobić. Zapisz się bezpośrednio na wizytę u wybranego pracownika."
+                />
+                <StyledGrid>
+                    {members.nodes.reverse().map(member => (
+                        <TeamCard key={member.name}
+                                  name={member.name}
+                                  imgUrl={member.picture.url}
+                                  services={member.services}
+                                  bookLink={member.bookLink}
+                        />
+                    ))}
+                </StyledGrid>
+            </InnerSection>
+        </StyledSection>
+    );
 };
 
 export default Team;

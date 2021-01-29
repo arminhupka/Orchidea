@@ -27,10 +27,16 @@ const StyledName = styled.h2`
 `;
 const StyledList = styled.ul`
   margin-bottom: 1rem;
+  text-align: center;
+  flex: 1;
 `;
 const StyledItem = styled.li``;
 
-const TeamCard = ({ name, imgUrl, services }) => (
+const StyledLink = styled.a`
+  color: inherit;
+`
+
+const TeamCard = ({ name, imgUrl, services, bookLink }) => (
   <CardWrapper>
     <StyledImage src={imgUrl} />
     <StyledName>{name}</StyledName>
@@ -42,7 +48,7 @@ const TeamCard = ({ name, imgUrl, services }) => (
             .map(el => <StyledItem key={el}>{el}</StyledItem>)
         : null}
     </StyledList>
-    <Button>Zapisz się</Button>
+      <Button><StyledLink href={bookLink}>Zapisz się</StyledLink></Button>
   </CardWrapper>
 );
 
