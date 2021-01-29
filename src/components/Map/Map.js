@@ -7,7 +7,7 @@ const MapWrapper = styled.div`
   height: 100%;
 `
 
-const position = [50.297632, 18.8059419]
+const position = [50.27329, 18.86453]
 
 const Map = () => {
     if (typeof window !== "undefined") {

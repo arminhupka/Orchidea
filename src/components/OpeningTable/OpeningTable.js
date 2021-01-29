@@ -20,11 +20,11 @@ const OpeningTable = () => (
     <StyledWrapper>
         <Title>Godziny otwarcia</Title>
         <StyledList>
-            <TableItem day="Poniedziałek" hour="08:00 - 10:00"/>
-            <TableItem day="Wtorek" hour="08:00 - 10:00"/>
-            <TableItem day="Środa" hour="08:00 - 10:00"/>
-            <TableItem day="Czwartek" hour="08:00 - 10:00"/>
-            <TableItem day="Piątek" hour="08:00 - 10:00"/>
+            <TableItem day="Poniedziałek" hour="11:00 - 20:00"/>
+            <TableItem day="Wtorek" hour="08:00 - 16:00"/>
+            <TableItem day="Środa" hour="08:00 - 17:00"/>
+            <TableItem day="Czwartek" hour="11:00 - 20:00"/>
+            <TableItem day="Piątek" hour="08:00 - 14:00"/>
             <TableItem day="Sobota" hour="Nieczynne"/>
             <TableItem day="Niedziela" hour="Nieczynne"/>
         </StyledList>
