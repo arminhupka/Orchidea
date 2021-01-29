@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createRef} from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -63,26 +63,29 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Nav = ({ visible }) => (
+const Nav = ({ visible, handleMenuButton }) => {
+
+  return(
       <StyledNav visible={visible}>
-        <StyledList >
-          <StyledItem>
+        <StyledList>
+          <StyledItem onClick={handleMenuButton}>
             <StyledLink to="/">Strona Główna</StyledLink>
           </StyledItem>
-          <StyledItem>
+          <StyledItem onClick={handleMenuButton}>
             <StyledLink to="/o-nas">O Nas</StyledLink>
           </StyledItem>
-          <StyledItem>
+          <StyledItem onClick={handleMenuButton}>
             <StyledLink to="/uslugi">Usługi</StyledLink>
           </StyledItem>
-          <StyledItem>
+          <StyledItem onClick={handleMenuButton}>
             <StyledLink to="/cennik">Cennik</StyledLink>
           </StyledItem>
-          <StyledItem>
+          <StyledItem onClick={handleMenuButton}>
             <StyledLink to="/kontakt">Kontakt</StyledLink>
           </StyledItem>
         </StyledList>
       </StyledNav>
   )
+}
 
 export default Nav;

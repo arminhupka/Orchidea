@@ -41,7 +41,7 @@ const Header = () => {
       <StyledHeader>
         <StyledContainer>
           <Branding />
-          <Nav visible={visible} setVisible={setVisible} handleMenuButton={handleMenuButton} />
+          <Nav visible={visible} handleMenuButton={handleMenuButton} />
           <StyledButton>Umów termin</StyledButton>
           <MenuButton handleMenuButton={handleMenuButton} />
         </StyledContainer>

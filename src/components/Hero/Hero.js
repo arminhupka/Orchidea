@@ -81,7 +81,6 @@ const Hero = () => {
     `
 
     const {allDatoCmsSlider: {nodes: sliders}} = useStaticQuery(query)
-    console.log(sliders)
 
     const settings = {
         dots: true,
@@ -97,7 +96,7 @@ const Hero = () => {
         <SliderWrapper>
             <StyedSlider {...settings}>
                 {sliders.map(slider => (
-                    <StyledSlide>
+                    <StyledSlide key={slider.heading}>
                         <StyledContainer>
                             <h1>{slider.heading}</h1>
                             <h2>{slider.description}</h2>
