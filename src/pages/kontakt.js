@@ -4,6 +4,7 @@ import {Container} from "../styles/GlobalStyle";
 import SectionTitle from "../components/SectionTitle/SectionTitle";
 import OpeningTable from "../components/OpeningTable/OpeningTable";
 import Map from "../components/Map/Map";
+import {Helmet} from "react-helmet";
 
 const StyledSection = styled.section``
 const StyledContainer = styled(Container)``
@@ -51,6 +52,10 @@ const MapWrapper = styled.div`
 
 
 const Kontakt = () => (
+    <>
+    <Helmet>
+        <title>Kontakt | Studio Urody Orchidea</title>
+    </Helmet>
     <StyledSection>
         <StyledContainer>
             <SectionTitle title="Kontakt"
@@ -80,5 +85,6 @@ const Kontakt = () => (
             </BottomInfo>
         </StyledContainer>
     </StyledSection>
+    </>
 )
 export default Kontakt

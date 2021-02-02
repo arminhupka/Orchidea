@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaFacebookF } from 'react-icons/all';
-import { Container } from '../../../styles/GlobalStyle';
+import {FaPhone} from 'react-icons/all';
+import {Container} from '../../../styles/GlobalStyle';
 
 const TopbarWrapper = styled.div`
   height: 4rem;
-  color: ${({ theme }) => theme.primary};
-  background-color: ${({ theme }) => theme.darkGray};
+  color: ${({theme}) => theme.primary};
+  background-color: ${({theme}) => theme.darkGray};
 `;
 
 const InnerContainer = styled(Container)`
@@ -16,21 +16,25 @@ const InnerContainer = styled(Container)`
   justify-content: flex-start;
 `;
 
+const StyledIcon = styled(FaPhone)`
+  margin-right: 1rem;
+`
+
 const StyledLink = styled.a`
   display: flex;
-  margin-right: 1rem;
   align-items: center;
-  color: ${({ theme }) => theme.primary};
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: ${({theme}) => theme.primary};
 `;
 
 const Topbar = () => (
-  <TopbarWrapper>
-    <InnerContainer>
-      <StyledLink href="https://www.facebook.com/suOrchidea/">
-        <FaFacebookF />
-      </StyledLink>
-    </InnerContainer>
-  </TopbarWrapper>
+    <TopbarWrapper>
+        <InnerContainer>
+            <StyledIcon/>
+            <StyledLink href="tel:506036299">506-036-299</StyledLink>
+        </InnerContainer>
+    </TopbarWrapper>
 );
 
 export default Topbar;

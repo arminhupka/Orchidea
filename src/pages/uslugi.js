@@ -2,8 +2,8 @@ import React from 'react';
 import {graphql, useStaticQuery} from "gatsby";
 import styled from 'styled-components';
 import {Container} from '../styles/GlobalStyle';
-import SectionTitle from "../components/SectionTitle/SectionTitle";
-import ServiceCard from "../components/ServiceCard/ServiceCard";
+import Accordion from "../components/Accordion/Accordion";
+import {Helmet} from "react-helmet";
 
 const StyledSection = styled.section``;
 const InnerWrapper = styled(Container)``;
@@ -31,14 +31,16 @@ const Uslugi = () => {
     const {allDatoCmsService: {nodes: services}} = useStaticQuery(query)
 
     return (
-        <StyledSection>
-            <InnerWrapper>
-                <SectionTitle title="Usługi" subtitle="Lorem ipsum dff"/>
-                <ServicesGrid>
-                    {services.map(service => <ServiceCard title={service.title} description={service.description}/>)}
-                </ServicesGrid>
-            </InnerWrapper>
-        </StyledSection>
+        <>
+            <Helmet>
+                <title>Usługi | Studio Urody Orchidea</title>
+            </Helmet>
+            <StyledSection>
+                <InnerWrapper>
+                    <Accordion/>
+                </InnerWrapper>
+            </StyledSection>
+        </>
     )
 }
 

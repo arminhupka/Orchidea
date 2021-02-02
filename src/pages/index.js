@@ -1,4 +1,5 @@
 import React from 'react';
+import {graphql} from "gatsby";
 import styled from 'styled-components';
 import Hero from '../components/Hero/Hero';
 import Helmet from 'react-helmet';
@@ -11,12 +12,13 @@ const ContentWrapper = styled.div`
   overflow: hidden;
 `;
 
-const IndexPage = () => {
+const IndexPage = ({data: {site: {siteMetadata}}}) => {
+    const {title, description} = siteMetadata
   return (
     <>
       <Helmet>
-        <title>Orchidea</title>
-        <meta name="description" content="Helmet application" />
+        <title>{title} | Studio Urody</title>
+        <meta name="description" content={description} />
       </Helmet>
       <ContentWrapper>
         <Hero />
@@ -27,5 +29,16 @@ const IndexPage = () => {
     </>
   );
 };
+
+export const query = graphql`
+    {
+        site {
+            siteMetadata {
+                title
+                description
+            }
+        }
+    }
+`
 
 export default IndexPage;
