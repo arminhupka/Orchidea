@@ -4,31 +4,35 @@ import styled from 'styled-components';
 import {Container} from '../styles/GlobalStyle';
 import Accordion from "../components/Accordion/Accordion";
 import {Helmet} from "react-helmet";
+import SectionTitle from "../components/SectionTitle/SectionTitle";
 
 const StyledSection = styled.section``;
 const InnerWrapper = styled(Container)``;
-const ServicesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-  }
+const AccordionsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 `
 
 const Uslugi = () => {
 
     const query = graphql`
         {
-            allDatoCmsService {
+            allDatoCmsServicesAccordion {
                 nodes {
                     title
                     description
+                    image {
+                        fluid {
+                            src
+                        }
+                    }
                 }
             }
         }
     `
 
-    const {allDatoCmsService: {nodes: services}} = useStaticQuery(query)
+    const {allDatoCmsServicesAccordion: {nodes: services}} = useStaticQuery(query)
 
     return (
         <>
@@ -37,7 +41,11 @@ const Uslugi = () => {
             </Helmet>
             <StyledSection>
                 <InnerWrapper>
-                    <Accordion/>
+                    <SectionTitle title="Usługi" subtitle="Zapoznaj się z naszą obszerną listą usług z których możesz skorzystać "/>
+                    <AccordionsWrapper>
+                        {services.map(service => <Accordion title={service.title} description={service.description}
+                                                            image={service.image}/>)}
+                    </AccordionsWrapper>
                 </InnerWrapper>
             </StyledSection>
         </>

@@ -2,36 +2,70 @@ import React, {useState} from 'react'
 import styled from "styled-components";
 
 const AccordionWrapper = styled.div`
-  padding: 2rem 3rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   background: ${({theme}) => theme.primary};
   color: #fff;
-  cursor: pointer;
+  flex-grow: 1;
+  @media screen and (min-width: 992px) {
+    width: 45%;
+  }
+`
+
+const AccordionText = styled.div`
+  flex: 1;
+  padding: 2rem 3rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    @media screen and (min-width: 992px) {
+      width: 70%;
+    }
+  }
+  
 `
 
 const InnerWrapper = styled.div`
-  max-height: ${({checked}) => checked ? "400px" : 0};
+  padding: 2rem 3rem;
   transition: .5s max-height;
   overflow: hidden;
+  background: ${({theme}) => theme.primaryDark};;
+  border-left: 2px solid ${({theme}) => theme.primary};
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  
+  li {
+    margin-right: 1rem;
+  }
 `
 
-const Accordion = () => {
+const Accordion = ({title, description, image}) => {
     const [checked, setChecked] = useState(false)
-
+    console.log(image)
     return (
-        <AccordionWrapper onClick={() => setChecked(!checked)}>
-            <h2>Accordion</h2>
-            <p>Kto nie marzy o pięknej i zadbanej skórze? Ten kto ją ma! Dzięki naszym zabiegom Twoja skóra twarzy, szyi
-                i dekoltu będzie dopieszczona, a Ty będziesz odprężona i zrelaksowana.</p>
-            <InnerWrapper checked={checked}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias amet beatae consequuntur
-                    corporis cum cupiditate delectus deleniti, dolor eligendi est eveniet expedita facere harum incidunt
-                    ipsum laboriosam magnam natus necessitatibus neque non praesentium quae quas quo recusandae sapiente
-                    voluptates! Accusamus aspernatur, assumenda corporis error impedit itaque iure maiores optio
-                    repellat sequi? Amet consequatur dignissimos dolore doloremque eligendi facilis fuga fugiat illo
-                    ipsam minima mollitia nemo numquam possimus, reiciendis tempore ut veniam vitae. At earum modi
-                    molestiae odit omnis porro quasi ratione vero, voluptatibus. Atque dolor et exercitationem
-                    repellendus, vitae voluptate voluptatibus! Aut blanditiis consequatur, cupiditate ipsum laudantium
-                    officia velit.</p>
+        <AccordionWrapper>
+            <AccordionText>
+                <h2>{title}</h2>
+                <p>{description}</p>
+            </AccordionText>
+            <InnerWrapper>
+                <h3>Lista zabiegów:</h3>
+                <ul>
+                    <li>paznokcie żelowe</li>
+                    <li>manicure hybrydowy</li>
+                    <li>manicure japoński</li>
+                    <li>manicure klasyczny</li>
+                    <li>manicure SPA</li>
+                    <li>rekonstrukcja obgryzionych paznokci</li>
+                </ul>
             </InnerWrapper>
         </AccordionWrapper>
     )
