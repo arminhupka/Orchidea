@@ -41,14 +41,30 @@ const TabList = styled.ul`
 
 const ListItem = styled.li`
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1.5rem 0;
   margin-bottom: 1rem;
+  border-bottom: 1px solid ${({theme}) => theme.primary};
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
-const StyledLine = styled.hr`
-  flex: 1;
-  margin: 0 2rem;
-  border: 1px solid ${({theme}) => theme.primary};
+const StyledTitle = styled.p`
+  width: 40%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+`
+
+const StyledPrice = styled.p`
+  font-size: 1.4rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 const TabItem = ({refs, sampleAccordionData, currentTab, setCurrentTab, bodyHeight, setBodyHeight}) => (
@@ -69,9 +85,8 @@ const TabItem = ({refs, sampleAccordionData, currentTab, setCurrentTab, bodyHeig
                     <TabList ref={refs[i]}>
                         {services.map(service => (
                             <ListItem>
-                                <p>{service.title}</p>
-                                <StyledLine/>
-                                <p>{service.price} PLN</p>
+                                <StyledTitle>{service.title}</StyledTitle>
+                                <StyledPrice>{service.price} PLN</StyledPrice>
                             </ListItem>
                         ))}
                     </TabList>

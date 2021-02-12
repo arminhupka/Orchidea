@@ -13,8 +13,10 @@ const MainFooter = styled.div`
 `;
 
 const ContactWrapper = styled.div`
+  margin-top: 1rem;
   @media screen and (min-width: 768px) {
     display: flex;
+    margin-top: 0;
   }
 `;
 

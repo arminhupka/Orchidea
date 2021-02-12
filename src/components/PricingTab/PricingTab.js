@@ -171,12 +171,12 @@ const PricingTab = () => {
                     price: "30,00"
                 },
                 {
-                    tite: "Wąsik",
+                    title: "Wąsik",
                     time: 10,
                     price: "20,00"
                 },
                 {
-                    tite: "Wąsik + broda",
+                    title: "Wąsik + broda",
                     time: 25,
                     price: "40,00"
                 },
