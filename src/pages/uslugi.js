@@ -18,10 +18,13 @@ const Uslugi = () => {
 
     const query = graphql`
         {
-            allDatoCmsServicesAccordion {
+            allDatoCmsServicesAccordion(sort: {fields: id, order: DESC}) {
                 nodes {
                     title
                     description
+                    features {
+                      text
+                    }
                     image {
                         fluid {
                             src
@@ -43,7 +46,7 @@ const Uslugi = () => {
                 <InnerWrapper>
                     <SectionTitle title="Usługi" subtitle="Zapoznaj się z naszą obszerną listą usług z których możesz skorzystać "/>
                     <AccordionsWrapper>
-                        {services.map(service => <Accordion title={service.title} description={service.description}
+                        {services.map(service => <Accordion title={service.title} description={service.description} features={service.features}
                                                             image={service.image}/>)}
                     </AccordionsWrapper>
                 </InnerWrapper>

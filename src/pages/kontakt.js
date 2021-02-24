@@ -13,7 +13,7 @@ const ContactDetails = styled.div`
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     flex-direction: row;
   }
 `
@@ -22,8 +22,7 @@ const ContactCard = styled.div`
   flex: 1;
   margin: 1rem 0;
 
-  @media screen and (min-width: 768px) {
-    margin: 0;
+  @media screen and (min-width: 992px) {
     margin: 0 2rem;
   }
 `
@@ -75,6 +74,11 @@ const Kontakt = () => (
                     <h2>Napisz do nas</h2>
                     <StyledLine/>
                     <a href="mailto:suorchidea@interia.pl">suorchidea@interia.pl</a>
+                </ContactCard>
+                <ContactCard>
+                    <h2>Rezerwacja</h2>
+                    <StyledLine/>
+                    <a href="https://www.moment.pl/studio-urody-orchidea-ruda-slaska">Zarezerwuj termin przez Moment</a>
                 </ContactCard>
             </ContactDetails>
             <BottomInfo>
