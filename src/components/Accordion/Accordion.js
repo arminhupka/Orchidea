@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from "styled-components";
 
 const AccordionWrapper = styled.div`
@@ -34,7 +34,7 @@ const InnerWrapper = styled.div`
   transition: .5s max-height;
   overflow: hidden;
   background: ${({theme}) => theme.primaryDark};;
-  border-left: 2px solid ${({theme}) => theme.primary};
+  //border-left: 2px solid ${({theme}) => theme.primary};
   
   ul {
     display: flex;
@@ -45,11 +45,13 @@ const InnerWrapper = styled.div`
   li {
     margin-right: 1rem;
   }
+  
+  h3 {
+    margin-bottom: 1rem;
+  }
 `
 
-const Accordion = ({title, description, image}) => {
-    const [checked, setChecked] = useState(false)
-    console.log(image)
+const Accordion = ({title, description, features}) => {
     return (
         <AccordionWrapper>
             <AccordionText>
@@ -59,12 +61,9 @@ const Accordion = ({title, description, image}) => {
             <InnerWrapper>
                 <h3>Lista zabiegów:</h3>
                 <ul>
-                    <li>paznokcie żelowe</li>
-                    <li>manicure hybrydowy</li>
-                    <li>manicure japoński</li>
-                    <li>manicure klasyczny</li>
-                    <li>manicure SPA</li>
-                    <li>rekonstrukcja obgryzionych paznokci</li>
+                  {features.map(feature => (
+                    <li>{feature.text}</li>
+                  ))}
                 </ul>
             </InnerWrapper>
         </AccordionWrapper>
