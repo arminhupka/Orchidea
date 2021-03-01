@@ -56,7 +56,7 @@ module.exports = {
             background_color: `#D9BE79`,
             theme_color: `#D9BE79`,
             display: `minimal-ui`,
-            icon: `src/images/orchidea_logo.png`, // This path is relative to the root of the site.
+            icon: `src/images/ico.ico`, // This path is relative to the root of the site.
           },
         },
     ],

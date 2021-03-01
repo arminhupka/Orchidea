@@ -21,7 +21,7 @@ const StyledSlide = styled.div`
   }
 
   @media screen and (min-width: 992px) {
-    height: 60rem;
+    height: 40rem;
   }
 `;
 
@@ -66,8 +66,6 @@ const Hero = () => {
         {
             allDatoCmsSlider {
                 nodes {
-                    heading
-                    description
                     sliderImage {
                         fluid {
                             src

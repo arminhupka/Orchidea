@@ -78,7 +78,7 @@ const Kontakt = () => (
                 <ContactCard>
                     <h2>Rezerwacja</h2>
                     <StyledLine/>
-                    <a href="https://www.moment.pl/studio-urody-orchidea-ruda-slaska">Zarezerwuj termin przez Moment</a>
+                    <a href="https://www.moment.pl/studio-urody-orchidea-ruda-slaska">Zarezerwuj termin na Moment.pl</a>
                 </ContactCard>
             </ContactDetails>
             <BottomInfo>

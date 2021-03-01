@@ -13,7 +13,7 @@ const InnerContainer = styled(Container)`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `;
 
 const StyledIcon = styled(FaPhone)`
