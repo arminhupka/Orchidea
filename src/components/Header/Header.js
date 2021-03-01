@@ -28,6 +28,10 @@ const StyledButton = styled(Button)`
   } ;
 `;
 
+const StyledLink = styled.a`
+  color: inherit;
+`
+
 const Header = () => {
   const [visible, setVisible] = useState(false);
 
@@ -42,7 +46,7 @@ const Header = () => {
         <StyledContainer>
           <Branding />
           <Nav visible={visible} handleMenuButton={handleMenuButton} />
-          <StyledButton>Umów termin</StyledButton>
+          <StyledButton><StyledLink href="https://www.moment.pl/studio-urody-orchidea-ruda-slaska">Umów termin</StyledLink></StyledButton>
           <MenuButton handleMenuButton={handleMenuButton} />
         </StyledContainer>
       </StyledHeader>

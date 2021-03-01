@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ServiceIcon from '../../images/serviceIcon.svg';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -32,14 +31,10 @@ const CardWrapper = styled.div`
   }
 `;
 
-const StyledImage = styled.img`
-  height: 5rem;
-  width: 100%;
-`;
+
 
 const ServiceCard = ({ title, description }) => (
   <CardWrapper>
-    <StyledImage src={ServiceIcon} alt="" />
     <h2>{title}</h2>
     <p>{description}</p>
   </CardWrapper>
