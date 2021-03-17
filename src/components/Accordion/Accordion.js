@@ -23,7 +23,7 @@ const AccordionText = styled.div`
 
   p {
     @media screen and (min-width: 992px) {
-      width: 70%;
+      width: 80%;
     }
   }
   
@@ -39,11 +39,15 @@ const InnerWrapper = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
+    //flex-grow: 1;
   }
   
   li {
     margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    font-size: .9em;
+    background: ${({theme}) => theme.primary};
   }
   
   h3 {
